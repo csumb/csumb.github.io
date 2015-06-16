@@ -1,8 +1,9 @@
 (function($) {
+  setTimeout(location.reload, 400000);
   var init = function() {
     loadAlerts();
     loadPingdom();
-    setTimeout(init, 10000);
+    setTimeout(init, 20000);
   };
   var loadPingdom = function() {
     var src = $('#pingdom').attr('src');
