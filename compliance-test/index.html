@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Sample of COmpliance Sherriff Issues</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+      .contrasty {
+        background: black;
+      }
+      p.contrasty {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sample of Compliance Sherriff Problems</h1>
+      <p>This page has <strong>zero accessibility problems</strong>, but Compliance Sherriff will report several errors.</p>
+      <section>
+        <h2>Alt attributes added in DOM</h2>
+        <p>This image has an alt attribute in the DOM, but not in HTML. It should pass:</p>
+        <img src="https://placebear.com/g/200/200">
+      </section>
+      <section>
+        <h2>Color contrast</h2>
+        <p>This paragraph has perfect contrast (white on black), but Compliance Sherriff gets confused by too many CSS rules:</p>
+        <p class="contrasty ok">This is <strong>Super Readable</strong></p>
+      </section>
+    </div>
+    <script>
+      $(function() {
+        $('img').attr('alt', 'A very cute bear');
+      });
+    </script>
+  </body>
+</html>
