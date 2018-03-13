@@ -7,13 +7,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <style>
       .contrasty {
-        background: white;
-      }
-      p.contrasty {
-        color: white;
-      }
-      .contrasty {
         background: black;
+        padding: 10px;
+        color: black;
+      }
+
+      p.contrasty {
+        color: black;
+      }
+
+      .contrasty.ok {
+        color: white;
       }
     </style>
   </head>
@@ -28,13 +32,19 @@
       </section>
       <section>
         <h2>Color contrast</h2>
-        <p>This paragraph has perfect contrast (white on black), but Compliance Sherriff gets confused by too many CSS rules:</p>
+        <p>This paragraph has perfect contrast (white on black), but Compliance Sherriff gets confused by applying styles in the DOM:</p>
+        <p class="contrasty js">This is <strong>Super Readable</strong></p>
+      </section>
+      <section>
+        <h2>CSS rules</h2>
+        <p>This paragraph has perfect contrast (white on black), but Compliance Sherriff doesn't handle CSS rules correctly:</p>
         <p class="contrasty ok">This is <strong>Super Readable</strong></p>
       </section>
     </div>
     <script>
       $(function() {
         $('img').attr('alt', 'A very cute bear');
+        $('.contrasty.js').css('color', 'white');
       });
     </script>
   </body>
