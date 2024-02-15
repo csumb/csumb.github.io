@@ -427,11 +427,11 @@ td {
   margin-bottom:5px;
   display:inline-block;
 }
-.bottomSelection {
+.logoSelection {
   cursor:pointer;
 }
-.bottomSelection.inno {
-  background:url('../img/innoBottom.png') center center no-repeat;
+.logoSelection.inno {
+  background:url('../catlogo.png') center center no-repeat;
   background-size:contain;
   width:187px;
   height:70px;
@@ -439,8 +439,8 @@ td {
   box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.bottomSelection.GlobalImpact {
-  background:url('../img/innoBottomGlobal-Impact.png') center center no-repeat;
+.logoSelection.GlobalImpact {
+  background:url('../catlogo.png') center center no-repeat;
   background-size:contain;
   width:187px;
   height:70px;
@@ -449,8 +449,8 @@ td {
   margin-left: 30px;
 }
 
-.bottomSelection.Return {
-  background:url('../img/innoBottomReturn.png') center center no-repeat;
+.logoSelection.Return {
+  background:url('../catlogo.png') center center no-repeat;
   background-size:contain;
   width:157px;
   height:70px;
@@ -468,8 +468,9 @@ td {
   box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
   margin-left:30px;
 } */
-.bottomSelection.blank {
-  background:#fff;
+
+.logoSelection.blank {
+  background: #fff;
   background-size:contain;
   width:150px;
   height:70px;
@@ -477,7 +478,7 @@ td {
   box-shadow:0 0 10px rgba(0, 0, 0, 0.2);
   margin-left:30px;
 }
-.bottomSelection.active {
+.logoSelection.active {
   box-shadow:0 0 3px 3px rgba(255, 198, 39, 1)
 }
 /* links */
@@ -516,7 +517,7 @@ button.addTitles {
   div.inputContainer.phone {
     width: 50% !important;
   }
-  .bottomSelection.blank {
+  .logoSelection.blank {
     margin-top:15px;
     margin-left:0;
   }

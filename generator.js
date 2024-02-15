@@ -144,7 +144,7 @@ function updateAll() {
       (showMask(),
       $(".tableHolder").empty(),
       $(".hyperlinkHolder").empty(),
-      $(".bottomHolder").empty(),
+      $(".logoHolder").empty(),
       $(".socialMediaHolder").empty(),
       $("#address").empty(),
       $("#preName").html($("#name").val()),
@@ -286,7 +286,7 @@ function updateAll() {
     }),
       (n += "</td></tr>"),
       $(".socialMediaHolder").append(n),
-      $(".bottomHolder").append(otherStuff());
+      $(".logoHolder").append(otherStuff());
   }
 }
 function generateLink(e, t, a) {
@@ -312,16 +312,14 @@ function validateEmail(e) {
   );
 }
 function otherStuff() {
-  var e = $(".bottomSelection.active").data("which");
+  var e = $(".logoSelection.active").data("which");
   return "inno" == e
-    ? '<tr><td><br><span style="color:#8C1D40; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr></tr><tr><td><span style="color:#8C1D40; font-size:8pt;"></span></td></tr>'
-    : ""
-    ? '<tr><td><br><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr>'
-    : "camp" == e
-    ? '<tr><td><br><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"></span></td></tr>'
+    ? '<tr><td><br><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="catlogo.png" style="width: 50px;"></span></td></tr>'
     : "GlobalImpact" == e
     ? '<tr><td><br><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"></span></td></tr>'
-    : "Return" == e;
+    : "Return" == e
+    ? '<tr><td><br><span style="color:#8C1D40; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr></tr><tr><td><span style="color:#8C1D40; font-size:8pt;"></span></td></tr>'
+    : "";
 }
 function saveJSON() {
   var e = fillData();
