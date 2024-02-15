@@ -14,7 +14,6 @@
 <body>
   <div class="botFoot">
       <div class="botContainer">
-        <p>Designed and developed by the <a target="_blank" href="https://print.asu.edu">Print and Imaging Lab</a></p>
         <button class="maroon" onclick="updateAll()">Generate</button>
       </div>
   </div>
@@ -121,20 +120,18 @@
     <br>
     <br class="clear">
     <h2>Choose your footer</h2>
-    <div class="topBottomBlankLabel">Blank</div>
     <div class="topBottomLabel">Logo Left</div>
     <div class="topBottomLabelGlobalImpact">Logo Top</div>
     <div class="topBottomLabelReturntoCampus">Logo Top 2</div>
+    <div class="topBottomBlankLabel">Blank</div>
     <br class="clear">
-    <div class="bottomSelection inno active" data-which="inno">
+    <div class="logoSelection inno active" data-which="inno">
     </div>
-    <div class="bottomSelection GlobalImpact" data-which="GlobalImpact">
+    <div class="logoSelection GlobalImpact" data-which="GlobalImpact">
     </div>
-    <div class="bottomSelection Return" data-which="Return">
+    <div class="logoSelection Return" data-which="Return">
     </div>
-    <!-- <div class="bottomSelection camp20" data-which="camp">
-    </div> -->
-    <div class="bottomSelection blank" data-which="blank">
+    <div class="logoSelection blank" data-which="blank">
     </div>
     <br class="clear">
     <br>
@@ -149,15 +146,16 @@
 <!--
     Preview Stuff
 -->
-  <div id="loader">
-    <img class="theStyles" src="img/2.gif">
-  </div>
+
   <div id="mask">
     <div class="thePreview">
       <h2>Your signature <span onclick="hidePreview()" class="hidePreview"><i class="fa fa-times-circle"></i> </span></h2>
       <section class="example" id="example">
         <table cellpadding="0" cellspacing="0" style="padding-right:8px; font-size:10pt; font-weight:normal; padding-left:8px; line-height:16px; font-family:Arial,Sans Serif; color:#000000">
-      		<tbody><tr>
+          <tbody class="logoHolder">
+          </tbody>
+          <tbody>
+          <tr>
             <td>
       		  	<span id="preName" style="color:#000000; font-weight: bold; font-size:10pt"></span>
             </td>
@@ -199,11 +197,6 @@
           </tr>
           </tbody><tbody class="hyperlinkHolder">
           </tbody>
-          <tbody class="socialMediaHolder">
-
-          </tbody>
-          <tbody class="bottomHolder">
-          </tbody>
           </table>
       </section>
 
@@ -220,8 +213,8 @@
   <script src="generator.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $('.bottomSelection').on('click', function() {
-        $('.bottomSelection.active').removeClass('active');
+      $('.logoSelection').on('click', function() {
+        $('.logoSelection.active').removeClass('active');
         $(this).addClass('active');
       });
       phoneFormatter();
