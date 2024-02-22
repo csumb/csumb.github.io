@@ -21,16 +21,32 @@ div.botContainer {
     max-width:1170px;
     margin:0 auto;
 }
-button.maroon {
-    background:#8C1D40;
-	border-radius:5px;
-    font-size:18px;
-    padding:10px 20px;
-    margin-top:10px;
-    float:right;
+button {
+    background-color: #0071BC;
+    color: #FFF !important;
+	  border: 2px solid transparent;
+    padding: 0.5rem 1.5rem;
+    margin: 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: color .3s ease-in-out, background-color .3s ease-in-out;
+    float: right;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
 }
-button.maroon:hover {
-    background:#ba2957;
+#button{
+  float: left;
+  margin: 0px 10px 10px 10px;
+}
+.btn-new{
+  float: left;
+  margin: 10px 10px 10px 0px;
+}
+button:hover {
+  background-color: #112E51;
+  color: #FFF !important;
 }
 img.generateButton {
     position:fixed;
@@ -92,24 +108,7 @@ input, select {
 select {
   height:40px;
 }
-button {
-    margin:0 15px;
-}
-button#button {
-    padding: 10px;
-    background: #5C6670;
-	border-radius:5px;
-    border: none;
-    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all .5s;
-    color: #fff;
-    font-weight: 700;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-button#button:hover {
-    background: #798694;
-}
+
 div.destroyElm, div.destroyElm2 {
     float:right;
     height:30px;
@@ -248,22 +247,6 @@ input[disabled] {
    color:#bababa;
 }
 
-button#gen {
-    margin-left: 15px;
-    margin-top: 80px;
-    padding: 10px;
-    background: #FF7F32;
-    border: none;
-    box-shadow: 1px 3px 2px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: all .5s;
-    color: #fff;
-    font-weight: 700;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-}
-div.container button#button:hover {
-    background: #9ff236;
-}
 div.container div.inputContainer {
     width: 50%;
     float: left;
@@ -284,19 +267,8 @@ table td {
 #showE {
     display: none;
 }
-button {
-    float: left;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: none;
-    background: #5C6670;
-	border-radius:5px;
-    color: #fff;
-    cursor: pointer;
-    transition: all .4s;
-    font-weight: bold;
-}
-button:hover, input#sub:hover {
+
+input#sub:hover {
     background: #768492;
 }
 .moreSpacing {

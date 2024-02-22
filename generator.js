@@ -107,7 +107,7 @@ function hideDialog() {
   $(".askDateRange").remove(), (isHere = 0);
 }
 function phoneFormatter() {
-  $("#phone, #fax, #cell").on("input", function () {
+  $("#phone").on("input", function () {
     updatePhone(this);
   });
 }
@@ -163,36 +163,20 @@ function updateAll() {
         $(".tableHolder").append(a);
       }),
       (phoneVal = ""),
-      (faxVal = ""),
-      (cellVal = ""),
       "" != $("#phone").val() &&
         (phoneVal =
-          '<strong>p: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:' +
+          '<strong style="color: #112E51;">Phone: </strong> <a style="color:black; font-size:8pt; font-family:arial, sans-serif; text-decoration:none;" href="tel:' +
           $("#phone").val() +
           '">' +
           $("#phone").val() +
           "</a>&nbsp;&nbsp;"),
-      "" != $("#fax").val() &&
-        (faxVal =
-          '<strong>f: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:' +
-          $("#fax").val() +
-          '">' +
-          $("#fax").val() +
-          "</a>&nbsp;&nbsp;"),
-      "" != $("#cell").val() &&
-        (cellVal =
-          '<strong>c: </strong> <a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="tel:' +
-          $("#cell").val() +
-          '">' +
-          $("#cell").val() +
-          "</a>"),
-      $("#prePhone").html(phoneVal + faxVal + cellVal),
+      $("#prePhone").html(phoneVal),
       "" != $("#email").val())
     )
       if (validateEmail($("#email").val())) {
         var e = $("#email").val().toLowerCase();
         $("#preEmail").html(
-          '<strong>email: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="mailto:' +
+          '<strong style="color: #112E51;">Email: </strong><a style="color:black; font-size:8pt; font-family:arial, sans-serif; text-decoration:none;" href="mailto:' +
             e +
             '">' +
             e +
@@ -206,41 +190,12 @@ function updateAll() {
       var t = $("#web").val().toLowerCase(),
         a = ensureHTTP(t);
       $("#preWeb").html(
-        '<strong>web: </strong><a style="color:#8C1D40; font-size:8pt; font-family:arial, sans-serif;" href="' +
+        '<strong style="color: #112E51;"><a style="color:black; font-size:8pt; font-family:arial, sans-serif; text-decoration:none;" href="' +
           a +
           '">' +
           t +
-          "<a/>"
+          "</a></strong>"
       );
-    }
-    if (
-      "" != $("#addLine1").val() ||
-      "" != $("#addLine2").val() ||
-      "" != $("#addLine3").val()
-    ) {
-      var l = '<tr height="10"><td align="left"></td></tr>';
-      $("#address").append(l);
-    }
-    if ("" != $("#addLine1").val()) {
-      l =
-        '<tr><td><span style="color:#000; font-size:8pt; font-weight:normal;">' +
-        $("#addLine1").val() +
-        "</span></td></tr>";
-      $("#address").append(l);
-    }
-    if ("" != $("#addLine2").val()) {
-      l =
-        '<tr><td><span style="color:#000; font-size:8pt; font-weight:normal;">' +
-        $("#addLine2").val() +
-        "</span></td></tr>";
-      $("#address").append(l);
-    }
-    if ("" != $("#addLine3").val()) {
-      l =
-        '<tr><td><span style="color:#000; font-size:8pt; font-weight:normal;">' +
-        $("#addLine3").val() +
-        "</span></td></tr>";
-      $("#address").append(l);
     }
     if ($(".subDeptMainContainer")[0]) {
       l = '<tr height="10"><td align="left"></td></tr>';
@@ -314,11 +269,11 @@ function validateEmail(e) {
 function otherStuff() {
   var e = $(".logoSelection.active").data("which");
   return "inno" == e
-    ? '<tr><td><br><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="catlogo.png" style="width: 50px;"></span></td></tr>'
+    ? '<style>.allFormHolder { display:flex; flex-direction:row; }</style><tr><td><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="catlogo.png" style="width: 50px;"></span></td></tr>'
     : "GlobalImpact" == e
-    ? '<tr><td><br><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"></span></td></tr>'
+    ? '<tr><td><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="catlogo.png" style="width: 50px;"></span></td></tr>'
     : "Return" == e
-    ? '<tr><td><br><span style="color:#8C1D40; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr></tr><tr><td><span style="color:#8C1D40; font-size:8pt;"></span></td></tr>'
+    ? '<tr><td><span style="color:#8C1D40; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr></tr><tr><td><span style="color:#8C1D40; font-size:8pt;"></span></td></tr>'
     : "";
 }
 function saveJSON() {
@@ -395,42 +350,6 @@ function fillData() {
     jsonObj.push(item),
     JSON.stringify(jsonObj)
   );
-}
-function createSocialMedia(e, t) {
-  void 0 === e && (e = ""), void 0 === t && (t = "");
-  var a =
-    '<div class="subDeptContainerSocial"><div onClick="destroyElm(this)" class="destroyElm">X</div><div class="inputContainer" style="width:45%;"><label> Social Media ' +
-    linkSocial +
-    ' </label><select class="socialTitle">';
-  for (let t of [
-    "facebook",
-    "twitter",
-    "instagram",
-    "snapchat",
-    "linkedin",
-    "youtube",
-    "vimeo",
-    "google+",
-    "slack",
-    "pinterest",
-    "google scholar",
-  ])
-    $.trim(t) === $.trim(e)
-      ? (a +=
-          '<option selected value="' +
-          $.trim(t) +
-          '">' +
-          $.trim(t) +
-          "</option>")
-      : (a += '<option value="' + $.trim(t) + '">' + $.trim(t) + "</option>");
-  (a +=
-    '</select></div><div class="inputContainer" style="width:45%;"><label> Social Media Link ' +
-    linkSocial +
-    ' </label><input type="text" class="subValLink" value="' +
-    t +
-    '" /></div> <br class="clear"/></div>'),
-    $("#socialMediaHolder").append(a),
-    linkSocial++;
 }
 (isHere = 0),
   $("form.uploadForm").ajaxForm({

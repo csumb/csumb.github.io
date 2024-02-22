@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Email Signature Generator</title>
+    <title>CSUMB Email Signature Generator</title>
     <link rel="stylesheet" href="generator.css" media="screen" title="no title" charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -14,13 +14,13 @@
 <body>
   <div class="botFoot">
       <div class="botContainer">
-        <button class="maroon" onclick="updateAll()">Generate</button>
+        <button class="blue" onclick="updateAll()">Generate</button>
       </div>
   </div>
 
   <div class="container">
     <!-- <img width="200px" alt="CSUMB Logo" src=""> -->
-    <h1>Email signature generator</h1>
+    <h1>CSUMB Email Signature Generator</h1>
   </div>
 
   <div class="container contentHolder">
@@ -28,75 +28,60 @@
     <input type="hidden" id="mainDepartment" value="">
 
       <div class="inputContainer">
-        <label for="name"> Name (Ex. Sparky Sun Devil, MEd (he/him/his)) </label>
-        <input id="name" type="text" name="name" placeholder="Sparky Sun Devil, MEd (he/him/his)" value="">
+        <label for="name"> Name (Full Name) </label>
+        <input id="name" type="text" name="name" placeholder="Your Full Name" value="">
       </div>
       <br class="clear">
 
       <div class="inputContainer">
-        <label for="titleDept"> Primary title (Please check for abbreviations) </label>
+        <label for="titleDept"> Title </label>
         <input id="titleDept" type="text" name="titleDept" placeholder="Your title" value="">
       </div>
+      <br class="clear">
 
       <div class="inputContainer">
         <label for="Dept"> Primary department (Please check for abbreviations)</label>
         <input id="Dept" type="text" name="Dept" placeholder="Your department" value="">
       </div>
       <br class="clear">
-
+      
+      <!-- Add Additional Titles Button 
       <button class="addTitles" onclick="generateSubTitle()"><i class="fa fa-plus" aria-hidden="true"></i> Add additional title</button>
       <br class="clear">
 
       <div id="subDeptHolder" class="ui-sortable">
       </div>
-
-      <div class="inputContainer phone">
-        <label for="addLine1"> Address line 1 </label>
-        <input id="addLine1" type="text" name="addLine1" placeholder="Address line 1" value="">
-      </div>
-
-      <div class="inputContainer phone">
-        <label for="addLine2"> Address line 2 </label>
-        <input id="addLine2" type="text" name="addLine2" placeholder="Address line 2">
-      </div>
-
-      <div class="inputContainer phone">
-        <label for="addLine3"> Address line 3 </label>
-        <input id="addLine3" type="text" name="addLine3" placeholder="Address line 3">
-      </div>
       <br class="clear">
       <br class="clear">
-      <br>
-    <h2> Contact information </h2>
-    <p>
-      Phone, FAX and cell number fields only accept numbers.  These fields will automatically format to the ASU-approved phone number format.
-    </p>
-    <br>
-    <br>
+
+      -->
 
     <div class="inputContainer phone">
       <label for="phone"> Phone # </label>
       <input id="phone" type="text" name="phone" placeholder="Your phone #" min="0" value="">
     </div>
-
+    
+    <!-- FAX
     <div class="inputContainer phone">
       <label for="fax"> FAX # </label>
       <input id="fax" type="text" name="fax" placeholder="Your FAX #" min="0">
     </div>
-
+    
+    CELL
     <div class="inputContainer phone">
         <label for="cell"> Cell # </label>
         <input id="cell" type="text" name="cell" placeholder="Your cell #" min="0">
     </div>
+    -->
+    <div class="inputContainer">
+      <label for="email"> Email </label>
+      <input id="email" type="text" name="email" placeholder="Your email" value="">
+    </div>
+    <br class="clear">
 
     <div class="inputContainer phone">
         <label for="web"> Website </label>
         <input id="web" type="text" name="web" placeholder="Your website">
-    </div>
-
-    <div class="inputContainer">
-        <label for="email"> Email </label>
-        <input id="email" type="text" name="email" placeholder="Your email" value="">
     </div>
 
     <br class="clear">
@@ -110,8 +95,8 @@
       <strong>"Add new line"</strong> adds a new line to the signature.  Multiple statements can be on one line, and the order of statements and lines can be adjusted by  dragging and dropping.
     </p>
     <br>
-    <button onclick="createSubCat()"><i class="fa fa-object-group" aria-hidden="true"></i> Add new line</button>
-    <button onclick="createLinks()"><i class="fa fa-plus" aria-hidden="true"></i> Add additional statement to current line</button>
+    <button class="btn-new" onclick="createSubCat()"><i class="fa fa-object-group" aria-hidden="true"></i> Add new line</button>
+    <button class="btn-new" onclick="createLinks()"><i class="fa fa-plus" aria-hidden="true"></i> Add additional statement to current line</button>
     <br>
     <br class="clear">
     <br>
@@ -119,7 +104,7 @@
     </div>
     <br>
     <br class="clear">
-    <h2>Choose your footer</h2>
+    <h2>Choose your format</h2>
     <div class="topBottomLabel">Logo Left</div>
     <div class="topBottomLabelGlobalImpact">Logo Top</div>
     <div class="topBottomLabelReturntoCampus">Logo Top 2</div>
@@ -152,52 +137,57 @@
       <h2>Your signature <span onclick="hidePreview()" class="hidePreview"><i class="fa fa-times-circle"></i> </span></h2>
       <section class="example" id="example">
         <table cellpadding="0" cellspacing="0" style="padding-right:8px; font-size:10pt; font-weight:normal; padding-left:8px; line-height:16px; font-family:Arial,Sans Serif; color:#000000">
-          <tbody class="logoHolder">
-          </tbody>
-          <tbody>
-          <tr>
-            <td>
-      		  	<span id="preName" style="color:#000000; font-weight: bold; font-size:10pt"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt;" id="preTitleDept"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt;" id="preDept"></span>
-            </td>
-          </tr>
-          </tbody><tbody class="tableHolder">
-          </tbody>
-          <tbody><tr>
-            <td>
-             <span style="color:#000; font-weight: bold; font-size:8pt" id="preSchool"></span>
-            </td>
-          </tr>
-          </tbody><tbody id="address">
-
-          </tbody>
-          <tbody><tr>
-            <td>
-             <span style="color:#000; font-size:8pt" id="prePhone"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt" id="preEmail"></span>
-            </td>
-          </tr>
-          <tr>
-            <td>
-             <span style="color:#000; font-size:8pt" id="preWeb"></span>
-            </td>
-          </tr>
-          </tbody><tbody class="hyperlinkHolder">
-          </tbody>
-          </table>
+        <tbody class="allFormHolder">
+          <tr><td><table>  
+            <tbody class="logoHolder">
+            </tbody>
+          </table></td></tr>
+              
+          <tr><td><table>
+            <tbody>
+              <tr>
+                <td>
+                  <span id="preName" style="color:#000000; font-weight: bold; font-size:10pt"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <span style="color:#000; font-size:8pt;" id="preTitleDept"></span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                <span style="color:#000; font-size:8pt;" id="preDept"></span>
+                </td>
+              </tr>
+            </tbody><tbody class="tableHolder">
+            </tbody>
+            <tbody><tr>
+              <td>
+              <span style="color:#000; font-weight: bold; font-size:8pt" id="preSchool"></span>
+              </td>
+            </tr>
+            </tbody><tbody id="address">
+            </tbody>
+            <tbody><tr>
+              <td>
+              <span style="color:#000; font-size:8pt" id="prePhone"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              <span style="color:#000; font-size:8pt" id="preEmail"></span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              <span style="color:#000; font-size:8pt" id="preWeb"></span>
+              </td>
+            </tr>
+            </tbody><tbody class="hyperlinkHolder">
+          </table></td></tr>
+        </tbody>
+        </table>
       </section>
 
       <button id="button" type="button" onclick="doData()" data-clipboard-target="#example" name="button"><i class="fa fa-clipboard" aria-hidden="true"></i> Copy your signature</button>
