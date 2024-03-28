@@ -265,11 +265,11 @@ function validateEmail(e) {
 function otherStuff() {
   var e = $(".logoSelection.active").data("which");
   return "inno" == e
-    ? '<style>.allFormHolder{display:flex; flex-direction:row;} .textHolder{margin-left: 10px;}</style><tr><td><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="/email-media/catlogo.png" style="width: 50px;"></span></td></tr>'
+    ? '<style>.allFormHolder{display:flex; flex-direction:row;} .textHolder{margin-left: 10px;}</style><tr><td><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="/email-media/CSUMB_stacked_logo_color.png" style="width: 150px;"></span></td></tr>'
     : "GlobalImpact" == e
-    ? '<style>.t-flex-cont{display: flex;} .textHolder{margin-top: 20px;} #prePhone{margin-left: -2px}</style><tr><td><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="/email-media/catlogo.png" style="width: 50px;"></span></td></tr>'
+    ? '<style>.t-flex-cont{display: flex;} .textHolder{margin-top: 20px;} #prePhone{margin-left: -2px}</style><tr><td><span style="color:#000; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr><td><span style="color:#000; font-size:8pt;"><img src="/email-media/CSUMB_typemark_blue.png" style="width: 275px;"></span></td></tr>'
     : "Return" == e
-    ? '<style>.t-flex-cont{display: flex;} .textHolder{border-left: medium solid #112E55;margin-top: 20px;padding-left: 10px} #prePhone{margin-left: -2px;}</style><tr><td><span style="color:#8C1D40; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr></tr><tr><td><span style="color:#8C1D40; font-size:8pt;"><img src="/email-media/catlogo.png" style="width: 50px;"></span></td></tr>'
+    ? '<style>.t-flex-cont{display: flex;} .textHolder{border-left: medium solid #112E55;margin-top: 20px;padding-left: 10px} #prePhone{margin-left: -2px;}</style><tr><td><span style="color:#8C1D40; font-size:8pt; font-weight:bold; background:#FFC627;"></span></td></tr><tr></tr><tr><td><span style="color:#8C1D40; font-size:8npt;"><img src="/email-media/CSUMB_primary_logo_color.png" style="width: 175px;"></span></td></tr>'
     : "";
 }
 function saveJSON() {
