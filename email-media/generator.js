@@ -247,11 +247,11 @@ function generateLink(e, t, a) {
       null != slitWords[0] && null != slitWords[1]
         ? ((string =
             slitWords[0] +
-            '<a style="color:#8C1D40; font-size:8pt;" href="' +
+            '<a style="color:#6b92b6; font-size:8pt;" href="' +
             a +
             '">' +
             t +
-            "</a> " +
+            "</a>" +
             slitWords[1]),
           string)
         : "")
